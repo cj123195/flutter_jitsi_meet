@@ -15,6 +15,7 @@ class JitsiViewController: UIViewController {
     var audioOnly:Bool? = false
     var audioMuted: Bool? = false
     var videoMuted: Bool? = false
+    var welcomePageEnabled: Bool = false
     var token:String? = nil
     var featureFlags: Dictionary<String, Any>? = Dictionary();
     
@@ -66,12 +67,9 @@ class JitsiViewController: UIViewController {
             builder.welcomePageEnabled = true
             builder.room = self.roomName
             builder.serverURL = self.serverUrl
-            builder.subject = self.subject
             builder.userInfo = self.jistiMeetUserInfo
-            builder.audioOnly = self.audioOnly ?? false
-            builder.audioMuted = self.audioMuted ?? false
-            builder.videoMuted = self.videoMuted ?? false
             builder.token = self.token
+            builder.welcomePageEnabled = self.welcomePageEnabled
             
             self.featureFlags?.forEach{ key,value in
                 builder.setFeatureFlag(key, withValue: value);

@@ -55,6 +55,7 @@ public class SwiftJitsiMeetPlugin: NSObject, FlutterPlugin, FlutterStreamHandler
                     let displayName = myArgs["userDisplayName"] as? String
                     let email = myArgs["userEmail"] as? String
                     let token = myArgs["token"] as? String
+                    let welcomePageEnabled = myArgs["welcomePageEnabled"] as? Bool ?? false
 
 
                     self.jitsiViewController?.roomName = roomName;
@@ -62,6 +63,7 @@ public class SwiftJitsiMeetPlugin: NSObject, FlutterPlugin, FlutterStreamHandler
                     self.jitsiViewController?.jistiMeetUserInfo.displayName = displayName;
                     self.jitsiViewController?.jistiMeetUserInfo.email = email;
                     self.jitsiViewController?.token = token;
+                    self.jitsiViewController?.welcomePageEnabled = welcomePageEnabled
 
 
                     if let avatarURL = myArgs["userAvatarURL"] as? String {
